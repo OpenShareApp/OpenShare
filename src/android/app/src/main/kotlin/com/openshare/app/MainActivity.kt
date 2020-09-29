@@ -1,4 +1,4 @@
-package com.openshare.app.OpenShare
+package com.openshare.app
 
 import io.flutter.embedding.android.FlutterActivity
 
