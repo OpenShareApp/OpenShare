@@ -1,7 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'network_info.freezed.dart';
 
-enum NetworkType { wifi, cellular }
+import '../../../../core/enums/network_type.dart';
+
+part 'network_info.freezed.dart';
 
 @freezed
 abstract class NetworkInfo with _$NetworkInfo {

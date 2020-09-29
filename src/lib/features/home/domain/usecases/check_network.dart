@@ -1,13 +1,19 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecase/usecase.dart';
 import '../entities/network_info.dart';
+import '../repositories/i_home_repository.dart';
 
-class CheckNetwork implements UseCase<NetworkType, NoParams> {
+@lazySingleton
+class CheckNetwork implements UseCase<NetworkInfo, NoParams> {
+  final IHomeRepository _repository;
+
+  CheckNetwork(this._repository);
+
   @override
-  Future<Either<Failure, NetworkType>> call(NoParams params) {
-    // TODO: implement call
-    throw UnimplementedError();
+  Future<Either<Failure, NetworkInfo>> call(NoParams params) {
+    return _repository.getNetworkInfo();
   }
 }

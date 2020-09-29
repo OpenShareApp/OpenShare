@@ -5,3 +5,7 @@ abstract class Failure extends Equatable {
   // so that Equatable can perform value comparison.
   Failure([List properties = const <dynamic>[]]);
 }
+
+class NetworkFailure extends Failure {
+  List<Object> get props => [];
+}
