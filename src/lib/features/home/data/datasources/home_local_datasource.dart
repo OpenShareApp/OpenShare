@@ -23,7 +23,7 @@ abstract class IHomeLocalDatasource {
 @Injectable(as: IHomeLocalDatasource)
 @lazySingleton
 class HomeLocalDatasource implements IHomeLocalDatasource {
-  final Connection connection;
+  final IConnection connection;
 
   const HomeLocalDatasource(this.connection);
 

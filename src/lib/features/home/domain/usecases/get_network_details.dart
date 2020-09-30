@@ -7,10 +7,10 @@ import '../entities/network_info.dart';
 import '../repositories/i_home_repository.dart';
 
 @lazySingleton
-class CheckNetwork implements UseCase<NetworkInfo, NoParams> {
+class GetNetworkDetails implements UseCase<NetworkInfo, NoParams> {
   final IHomeRepository _repository;
 
-  CheckNetwork(this._repository);
+  GetNetworkDetails(this._repository);
 
   @override
   Future<Either<Failure, NetworkInfo>> call(NoParams params) {

@@ -9,7 +9,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../features/home/domain/usecases/check_network.dart';
+import '../../features/home/domain/usecases/get_network_details.dart';
 import '../../features/home/data/repositories/home_repository.dart';
 import '../network/connection.dart';
 import '../../features/home/data/datasources/home_local_datasource.dart';
@@ -34,7 +34,8 @@ Future<GetIt> $initGetIt(
       () => HomeLocalDatasource(get<Connection>()));
   gh.factory<IHomeRepository>(
       () => HomeRepository(get<IHomeLocalDatasource>()));
-  gh.lazySingleton<CheckNetwork>(() => CheckNetwork(get<IHomeRepository>()));
+  gh.lazySingleton<GetNetworkDetails>(
+      () => GetNetworkDetails(get<IHomeRepository>()));
   return get;
 }
 

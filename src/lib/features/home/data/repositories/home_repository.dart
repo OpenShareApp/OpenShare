@@ -15,6 +15,7 @@ class HomeRepository implements IHomeRepository {
 
   HomeRepository(this._localDatasource);
 
+  /// Returns connected [NetworkInfo]
   @override
   Future<Either<Failure, NetworkInfo>> getNetworkInfo() async {
     try {

@@ -19,6 +19,7 @@ dependencies:
   equatable: ^1.2.5
   injectable: ^1.0.4
   path_provider: ^1.6.18
+  mockito: ^4.1.0
   hive: ^1.4.4
 
   cupertino_icons: ^1.0.0
