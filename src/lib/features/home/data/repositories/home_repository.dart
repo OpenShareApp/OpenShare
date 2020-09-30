@@ -15,7 +15,9 @@ class HomeRepository implements IHomeRepository {
 
   HomeRepository(this._localDatasource);
 
-  /// Returns connected [NetworkInfo]
+  /// Returns connected [NetworkInfo].
+  ///
+  /// Returns [NetworkFailure] if no valid network mode found.
   @override
   Future<Either<Failure, NetworkInfo>> getNetworkInfo() async {
     try {
