@@ -34,8 +34,10 @@ class HomeLocalDatasource implements IHomeLocalDatasource {
       return Future.value(NetworkInfoModel(type: NetworkType.mobile, name: ''));
     }
     if (networkMode == 'wifi') {
-      return Future.value(NetworkInfoModel(
-          type: NetworkType.wifi, name: await connection.networkName));
+      final networkName = await connection.networkName;
+      if (networkName == null) throw NetworkException();
+      return Future.value(
+          NetworkInfoModel(type: NetworkType.wifi, name: networkName));
     }
     throw NetworkException();
   }

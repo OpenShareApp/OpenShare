@@ -3,7 +3,7 @@ description: OpenShare - Cross platform app for sharing
 homepage: https://openshare.app
 documentation: https://openshare.app/docs
 repository: https://github.com/OpenShareApp/OpenShare
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 environment:
   sdk: ">=2.9.0 <3.0.0"
@@ -23,12 +23,13 @@ dependencies:
   hive: ^1.4.4
 
   cupertino_icons: ^1.0.0
+  get_it: ^4.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
-  build_runner: 
+
+  build_runner: null
   freezed: ^0.12.1
   json_serializable: ^3.5.0
   injectable_generator: ^1.0.4
@@ -36,33 +37,3 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  

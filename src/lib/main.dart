@@ -1,7 +1,11 @@
+import 'package:OpenShare/core/injection/injection.dart';
 import 'package:OpenShare/features/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureInjection(Environment.prod);
   runApp(OpenShareApp());
 }
 

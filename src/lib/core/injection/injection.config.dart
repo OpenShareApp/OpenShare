@@ -14,7 +14,7 @@ import '../../features/home/data/repositories/home_repository.dart';
 import '../network/connection.dart';
 import '../../features/home/data/datasources/home_local_datasource.dart';
 import '../../features/home/domain/repositories/i_home_repository.dart';
-import '../network/register_module.dart';
+import 'register_module.dart';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
@@ -31,7 +31,7 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<Connectivity>(() => registerModule.connectivity);
   gh.factory<IConnection>(() => Connection(get<Connectivity>()));
   gh.factory<IHomeLocalDatasource>(
-      () => HomeLocalDatasource(get<Connection>()));
+      () => HomeLocalDatasource(get<IConnection>()));
   gh.factory<IHomeRepository>(
       () => HomeRepository(get<IHomeLocalDatasource>()));
   gh.lazySingleton<GetNetworkDetails>(
